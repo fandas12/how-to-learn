@@ -1,7 +1,11 @@
 .page {
   min-width: 1100px;
+   /* мы ещё не умеем делать мобильную версию сайта, */
+  /* поэтому выше установлена минимальная ширина страницы */
   max-width: 1600px;
+  /* выше установили ограничение по максимальной ширине */
   margin: 0 auto;
+  /* выше для экранов больше 1600px отцентрировали весь контент */
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -17,20 +21,17 @@
   position: relative;
   background-color: #f2f2f2;
   overflow: hidden;
+  /* выше установили ограничения для секции */
 }
 
 .header__title {
   line-height: 96px;
   font-size: 102px;
-  font-weight: 600px;
-  width: 730px;
+  font-weight: 600;
+  max-width: 730px;
   margin: 0;
   margin-left: 64px;
   z-index: 3;
-}
-
-.logo {
-  background-image: url(../images/logo_place_header.svg);
 }
 
 .header__subtitle {
@@ -50,12 +51,13 @@
   text-decoration: none;
 }
 
+/* ниже мы привели пример двух селекторов, чтобы вы вспомнили запись элемента */
 .header__square-pic {
   height: 568px;
   width: 568px;
   position: absolute;
   background-color: #2f80ed;
-  top: 50px;
+  top: 64px;
   right: 0;
   z-index: 1;
 }
@@ -64,12 +66,14 @@
   width: 765px;
   height: 608px;
   position: absolute;
+  object-fit: cover;
   right: 0;
   bottom: 0;
   z-index: 2;
 }
 
 .logo_place_header {
+  background-image: url(../images/logo_place_header.svg);
   width: 228px;
   height: 32px;
   position: absolute;
@@ -82,7 +86,6 @@
   flex-direction: row;
   justify-content: center;
   padding-top: 100px;
-  background-color: white;
 }
 
 .two-columns {
@@ -95,7 +98,7 @@
 }
 
 .two-columns__brief {
-  width: 175px;
+  max-width: 175px;
   font-size: 18px;
   font-weight: normal;
   line-height: 1.2;
@@ -130,7 +133,6 @@
 
 .digits {
   margin-top: 100px;
-  background-color: white;
 }
 
 .section-title {
@@ -195,7 +197,7 @@
 }
 
 .feynman__title {
-  width: 648px;
+  max-width: 648px;
   line-height: 1.15;
   font-size: 120px;
   font-weight: 600;
@@ -228,6 +230,7 @@
 }
 
 .feynman__img {
+  background-image: url(../images/feynman.png);
   position: absolute;
   bottom: 0;
   left: 0;
@@ -243,6 +246,7 @@
   z-index: 1;
 }
 
+/* и элемента с модификатором вида ключ-значение */
 .table__cell_theme_dark {
   width: 200px;
   color: white;
@@ -353,8 +357,4 @@
   width: 16px;
   height: 16px;
   margin-right: 10px;
-}
-
-.footer__column-link:last-child {
-  padding-bottom: 0;
 }
